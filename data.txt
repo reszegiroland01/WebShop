@@ -6,7 +6,7 @@ const products = [
     description: "Kényelmes és egyszerű fehér póló, 100% pamut.",
     category: "Ruházat",
     inStock: true,
-    image: "feher-polo.jpg"
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const products = [
     description: "Klasszikus kék farmer, egyenes szabású és tartós anyagból.",
     category: "Ruházat",
     inStock: true,
-    image: "kek-farmer.jpg"
+    image: "https://images.unsplash.com/photo-1581502473651-37428e2f975f"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const products = [
     description: "Zajszűrő vezeték nélküli fejhallgató, 20 órás üzemidővel.",
     category: "Elektronika",
     inStock: false,
-    image: "vezeteknelkuli-fejhallgato.jpg"
+    image: "https://images.unsplash.com/photo-1583225151893-d99e6819a075"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const products = [
     description: "Kompakt eszpresszó gép otthoni használatra, könnyen kezelhető és tisztítható.",
     category: "Háztartási Gépek",
     inStock: true,
-    image: "eszpresszo-gep.jpg"
+    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const products = [
     description: "Könnyű és tartós futócipő, kiváló párnázással.",
     category: "Ruházat",
     inStock: true,
-    image: "futocipo.jpg"
+    image: "https://images.unsplash.com/photo-1599058917213-3f3d0ab1c91c"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const products = [
     description: "Legújabb modell okostelefon, nagy felbontású kijelzővel és gyors processzorral.",
     category: "Elektronika",
     inStock: true,
-    image: "okostelefon.jpg"
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const products = [
     description: "Tartós és vízálló hátizsák, ideális kirándulásokhoz és mindennapi használatra.",
     category: "Kiegészítők",
     inStock: true,
-    image: "hatizsak.jpg"
+    image: "https://images.unsplash.com/photo-1598300058603-77a5b0305bfb"
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const products = [
     description: "Automata kávéfőző, egyszerű kezeléssel és ízletes kávéval.",
     category: "Háztartási Gépek",
     inStock: true,
-    image: "kavefozo.jpg"
+    image: "https://images.unsplash.com/photo-1580377968139-906f4f5df6d7"
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ const products = [
     description: "Kompakt és könnyű tablet, tökéletes olvasáshoz és szórakozáshoz.",
     category: "Elektronika",
     inStock: false,
-    image: "tablet.jpg"
+    image: "https://images.unsplash.com/photo-1553864256-44df0f82c39e"
   },
   {
     id: 10,
@@ -87,6 +87,6 @@ const products = [
     description: "Stílusos napszemüveg UV-védelemmel.",
     category: "Kiegészítők",
     inStock: true,
-    image: "napszemuveg.jpg"
+    image: "https://images.unsplash.com/photo-1583241938089-710196e5452c"
   }
 ];
