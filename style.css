@@ -1,0 +1,32 @@
+.container{
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productName{
+    background-color: aquamarine;
+    color:purple;
+    width:100px
+    
+}
+.productDescription{
+    width: 30%;
+    overflow: hidden;
+    height: 50px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.Red{
+    background-color: red;
+}
+
+
