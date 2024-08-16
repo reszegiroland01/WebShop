@@ -6,10 +6,45 @@ html{
     display: flex;
     justify-content: center;
 }
-.cart{
+
+.cart {
+    max-height: 505px; /* Maximális magasság, amelyet a kosár tartalmazhat */
+    overflow-y: auto; /* Görgetősáv, ha a tartalom meghaladja a maximális magasságot */
+    padding: 10px; /* Kisebb belső margó */
+    border: 1px solid #ccc; /* Körvonal a kosárnak */
+    
+}
+
+.cartItemsContainer {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    flex-direction: column; /* Elemek egymás alatt helyezkednek el */
+    gap: 20px; /* Távolság az egyes termékek között */
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.productImageContainer {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.productImage {
+    max-width: 100%;
+    height: auto;
+}
+
+.productDetails {
+    flex: 1;
+}
+
+h1 {
+    margin-bottom: 20px;
 }
 
 .container{
@@ -41,7 +76,7 @@ html{
     background-color: #f8fcda;
     border-radius: 7px;
     align-items: center;
-    padding-inline: 5px;
+    padding-inline: 10px;
     border: 1px #a5abaf solid;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -81,7 +116,6 @@ html{
 
 
 
-
 /*Menu beállításai*/
 body
 {
@@ -101,17 +135,17 @@ body
 .extended{
     
     display: block;
-    animation: extend 0.3s forwards;
+    animation: extend 0.4s forwards;
 }
 .closed{
     
     display: none;
-    animation: close 0.3s forwards;
+    animation: close 0.4s forwards;
 }
 
 .menuContainer {
     width: 20%; 
-    height: 50vh;
+    height: 505px;
     background-color: #f8fcda;
     padding: 20px;
     color: #333;
@@ -119,8 +153,6 @@ body
     top: 0;
     left: 0;
     border-radius: 5px;
-    
-    
     
 }
 .menuHeader {
@@ -146,6 +178,30 @@ body
     padding: 10px;
 }
 
+#totalAmount {
+    margin-bottom: 20px;
+}
+
+.menuActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.menuActions button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid;
+    background-color: #f8fcda;
+    color: #393F44;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menuActions button:hover {
+    background-color: #c2c98e;
+}
+
 
 @keyframes extend {
     from {width: 0px;}
@@ -155,6 +211,7 @@ body
   @keyframes close {
     from {width: 20%;}
     to {width: 0px;}
+    
   }
 
 

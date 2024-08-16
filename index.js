@@ -126,6 +126,7 @@ function getItem(productId)
   })
   cart.push(product)
   console.log(cart)
+  calculateTotal();
   checkCart();
 }
 
@@ -135,10 +136,23 @@ if (cart.length === 0) {
     item += "<h1>Üres a kosarad</h1>";
 } else {
     item += "<h1>A kosarad tartalma</h1>";
+    item += '<div class="cartItemsContainer">';  // Konténer az összes kosár elemhez
     // Kosár tartalmának megjelenítése
     cart.map((product) => {
-        item += `<div class="cartItem"> <p> ${product.name} - ${product.price} Ft</p><button onclick="removeItem(${product.id})">Törlés</button></div>`;
-    });
+      item += `
+          <div class="cartItem">
+              <div class="productImageContainer">
+                  <img class="productImage" src="${product.image}" alt="${product.name}"></img>
+              </div>
+              <div class="productDetails">
+                  <p><strong>Név:</strong> ${product.name}</p>
+                  <p><strong>Leírás:</strong> ${product.description}</p>
+                  <p><strong>Ár:</strong> ${product.price} Ft</p>
+                  <button onclick="removeItem(${product.id})">Törlés</button>
+              </div>
+          </div>`;
+  });
+  item += '</div>';  // Befejezi a konténert
   }
 document.getElementById("cart").innerHTML = item;
 
@@ -148,8 +162,6 @@ function removeItem(productId) {
 cart = cart.filter((product) => product.id !== productId);
 checkCart(); // Frissíti a kosarat, miután eltávolított egy elemet
 }
-
-
 checkCart();
 
 //Ha hozzáadsz a kosaradhoz egy terméket akkor irassa ki az üres a kosarad helyett
@@ -175,5 +187,30 @@ function toggleMenu()
   }
 }
 
+function calculateTotal()
+{
+  let total = 0
+  cart.map((item)=>{
+    total += item.price;
+    console.log(item.price);
+  })
+  document.getElementById("totalAmount").innerText = `Összeg: ${total} Ft`;
+  checkCart()
+}
+calculateTotal()
 
+function clearCart() {
+  cart = []; 
+  calculateTotal(); 
+  checkCart(); 
+}
+
+function placeOrder() {
+  if (cart.length === 0) {
+    alert("A kosár üres, nem tudsz rendelni.");
+    return;
+  }
+  alert("Köszönjük a rendelést!");
+  clearCart();
+}
 
