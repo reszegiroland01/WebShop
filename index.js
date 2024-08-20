@@ -1,3 +1,5 @@
+
+
 const products = [
   {
     id: 1,
@@ -91,7 +93,7 @@ const products = [
   }
 ];
 
-let cart = []
+
 
 
 function fo()
@@ -100,117 +102,37 @@ function fo()
   products.map((product)=>{
       item += '<div class="row '+(product.inStock === true? "" : "faded")+'">'
       item += '<div class="productImageContainer"><img class="productImage" src='+product.image+' alt='+product.name+'></img></div>'
-      item += '<div class="productName"><p>'+product.name+'</p></div>'
-      item += '<div class="productDescription"><p class="productDestriptionText">'+product.description+'</p></div>'
-      item += '<div class="productInstock"><p>' + (product.inStock === true ? "Raktáron" : "Elfogyott") + '</p></div>';
-      item += '<div class="productPrice"><p>'+product.price+" Ft"+'</p></div>'
+      item += '<p class="productName">'+product.name+'</p>'
+      item += '<p class="productInstock">' + (product.inStock === true ? "Raktáron" : "Elfogyott") + '</p>';
+      item += '<p class="productPrice">'+product.price+" Ft"+'</p>'
       item += '<button onClick="getItem(' + product.id + ')" class="productButton"' + (!product.inStock ? ' disabled' : '') + '>Kosárba</button>';
       item += '</div>'
 
   })
   document.getElementById("container").innerHTML=item
 
-  
 
 }
 fo()
 
-function getItem(productId)
+function checkUser()
 {
-  let product 
-  products.map((item)=>{
-      if(item.id === productId)
-      {
-          product = item
-      }
-  })
-  cart.push(product)
-  console.log(cart)
-  calculateTotal();
-  checkCart();
-}
-
-function checkCart() {
-let item = "";
-if (cart.length === 0) {
-    item += "<h1>Üres a kosarad</h1>";
-} else {
-    item += "<h1>A kosarad tartalma</h1>";
-    item += '<div class="cartItemsContainer">';  // Konténer az összes kosár elemhez
-    // Kosár tartalmának megjelenítése
-    cart.map((product) => {
-      item += `
-          <div class="cartItem">
-              <div class="productImageContainer">
-                  <img class="productImage" src="${product.image}" alt="${product.name}"></img>
-              </div>
-              <div class="productDetails">
-                  <p><strong>Név:</strong> ${product.name}</p>
-                  <p><strong>Leírás:</strong> ${product.description}</p>
-                  <p><strong>Ár:</strong> ${product.price} Ft</p>
-                  <button onclick="removeItem(${product.id})">Törlés</button>
-              </div>
-          </div>`;
-  });
-  item += '</div>';  // Befejezi a konténert
-  }
-document.getElementById("cart").innerHTML = item;
-
-}
-// Törlés funkció a kosárból
-function removeItem(productId) {
-cart = cart.filter((product) => product.id !== productId);
-checkCart(); // Frissíti a kosarat, miután eltávolított egy elemet
-}
-checkCart();
-
-//Ha hozzáadsz a kosaradhoz egy terméket akkor irassa ki az üres a kosarad helyett
-// Kosárba helyett törlés gomb ha rámegyek törölje ki az elemből
-// Legyen egy reset gomb ami mindent kitorol 
-//Legyen egy számlálo ami számlálja mennyibe kerül a rendelés
-// Rendelés leadása gomb a termékek alá és akkor kiírja hogy köszi a rendelés 
-//Tegnapi menüsort belerakhatod 
-
-function toggleMenu()
-{
-  
-  let container = document.getElementById("menuContainer")
-  if(container.classList.contains("extended"))
+  const user = localStorage.getItem("User")
+  if(!user)
   {
-      container.classList.remove("extended")
-      container.classList.add("closed")
-  }
-  else
-  {
-      container.classList.remove("closed")
-      container.classList.add("extended")
+    window.location.href="../login/index.html"
   }
 }
+checkUser()
 
-function calculateTotal()
-{
-  let total = 0
-  cart.map((item)=>{
-    total += item.price;
-    console.log(item.price);
-  })
-  document.getElementById("totalAmount").innerText = `Összeg: ${total} Ft`;
-  checkCart()
-}
-calculateTotal()
 
-function clearCart() {
-  cart = []; 
-  calculateTotal(); 
-  checkCart(); 
-}
 
-function placeOrder() {
-  if (cart.length === 0) {
-    alert("A kosár üres, nem tudsz rendelni.");
-    return;
-  }
-  alert("Köszönjük a rendelést!");
-  clearCart();
-}
+
+
+
+
+
+
+
+
 

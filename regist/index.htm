@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPage</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="/login/login.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="loginCard">
+            <h1>Regisztráció</h1>    
+            <button>Bejelentkezés Google-el</button>   
+            <p class="placeHolder">Regisztráció emailel</p>
+            <div class="inputContainer">
+                <span>Felhasználónév vagy Email</span> 
+                <input type="text" id="newUserName"/>
+            </div>
+            <div class="inputContainer">
+                <span>Jelszó</span> 
+                <input type="password" id="newPassword"/>
+            </div>
+            
+            <button onclick="registration()" style="background-color: rgb(14,12,35); color: white;">Regisztráció</button>
+            
+            <div id="registrationModal" class="registrationModal registrationHideModal">
+                
+            </div>
+
+            <button onclick="navigateToLogin()" class="nextToLoginHide" id="nextToLoginHide">Tovább a belépéshez</button>
+            
+            
+        </div>   
+    </div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    
+    
+}
+
+.loginCard{
+    
+    width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    
+}
+
+button{
+    background-color: transparent;
+    border: 1px solid lightgray;
+    border-radius: 70px;
+    padding: 13px;
+    width: 350px;
+    
+}
+
+input{
+    height: 38px;
+    border-radius: 13px;
+    border: 1px solid lightgray;
+    width: 350px !important;
+}
+input:focus{
+    border: 1px solid lightpink;
+    outline: none;
+    
+}
+
+.inputContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+span{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.placeHolder{
+    font-size: 12px;
+    text-align: center;
+    color: #767676;
+}
+
+.modal{
+    background-color: #C21807;
+    color: white;
+    height: 40px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hideModal{
+    display: none;
+}

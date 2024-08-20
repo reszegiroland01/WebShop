@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFEFEF;
+    width: 100%;
+    height: 100vh;
+}
+
+.cart{
+    display: flex;
+    background-color: white;
+    width: 50%;
+    height: 600px;
+    border-radius: 7px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding-inline: 14px;
+    gap: 4px;
+    padding-block: 14px;
+}
+
+.shopping{
+    
+    display: flex;
+    align-items: center;
+}
+.shoppingCart{
+    
+    width: 60%;
+    
+}
+
+.placeHolderText{
+    color: #5A5A5A;
+    font-size: 10px;
+}
+
+.itemsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.cartItemsContainer {
+    display: flex;
+    flex-direction: column; /* Elemek egymás alatt helyezkednek el */
+    gap: 20px; /* Távolság az egyes termékek között */
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.cartProductImageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.cartProductImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+.cartProductDetails{
+    display: flex;
+}
+.cartRemove{
+    border: none;
+    background-color: transparent;
+}
+
+.cartDetails{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(14, 12, 35, 0.836);
+    width: 40%;
+    border-radius: 7px;
+    color: white;
+    padding-inline: 20px;
+
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+.cartFlexContainer{
+    display: flex;
+    gap: 10px;
+
+}
+.basicInputSyle{
+    border: 1px solid white;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 7px;
+}
+.smallInput{
+    max-width: 40%;
+    
+}
+
+.costText{
+    font-size: 12px;
+    font-weight: 700;
+}
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: white;
+}
+
+.submitOrder
+{
+    background-color: rgb(14,12,35);
+    border: 1px solid lightgray;
+    border-radius: 70px;
+    padding: 13px;
+    color: white;
+    width: 100%;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+input::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+input[type=date]{
+    color: white;
+}
+
+.buttonContainer{
+    width: 100%;
+    
+}
+.disabled{
+    opacity: 60%;
+}
+
+
+

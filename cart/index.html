@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+    
+</head>
+<body>
+    <div class="container">
+        <div class="cart">
+            <div class="shoppingCart">
+                <div class="shopping"> 
+                    <a href="../index.html">⬅ Vásárlás folytatása</a>
+                </div>
+                <div class="">
+                    <p class="placeHolderText">Bevásárló kocsi</p>
+                    <p class="placeHolderText"><span id="itemsLength"></span> elem van a bevásárló kocsidban</p>
+                </div>
+                <div class="itemsContainer" id="itemsContainer">
+
+                </div>
+            </div>
+            <div class="cartDetails">
+                <div class="title">
+                    <p><b>Bankkártya adatok</b></p>
+                    <img src="" alt="">
+                </div>
+                <div class="inputs">
+                    <input placeholder="Név" class="basicInputSyle" type="text">
+                    <input placeholder="Kártyaszám" class="basicInputSyle" type="number">
+                    <div class="cartFlexContainer">
+                        <input placeholder="Lejárati dátum" class="basicInputSyle smallInput" type="date">
+                        <input placeholder="CVV" class="basicInputSyle smallInput" type="number">
+                    </div>
+                    <hr class="line">
+                    <div>
+                        <p class="costText">Szállítás<span></span></p>
+                        <p class="costText" id="costText" >Teljes összeg:<span id="totalAmount"></span></p>
+                    </div>
+                    <div class="buttonContainer" id="buttonContainer"></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>   
+</body>
+</html>
