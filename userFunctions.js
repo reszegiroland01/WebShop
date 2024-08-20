@@ -23,5 +23,5 @@ setUsername()
 function userLogout()
 {
     localStorage.removeItem("User");
-    window.location.href = '../login/index.html';
+    window.location.href = './login/index.html';
 }

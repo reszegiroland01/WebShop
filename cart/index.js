@@ -84,7 +84,7 @@ function placeOrder() {
   alert("Köszönjük a rendelést!");
   clearCart();
   sessionStorage.removeItem("cart")
-  window.location.href="../index.html"
+  window.location.href="./index.html"
 }
 
 function isActive()

@@ -1,5 +1,4 @@
 
-
 const products = [
   {
     id: 1,
@@ -120,7 +119,7 @@ function checkUser()
   const user = localStorage.getItem("User")
   if(!user)
   {
-    window.location.href="../login/index.html"
+    window.location.href="./login/index.html"
   }
 }
 checkUser()
