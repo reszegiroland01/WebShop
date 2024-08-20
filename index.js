@@ -124,6 +124,12 @@ function checkUser()
 }
 checkUser()
 
+function navigateToCart()
+{
+  window.location.href="./cart/index.html"
+}
+
+
 
 
 
