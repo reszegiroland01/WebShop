@@ -19,7 +19,7 @@ function getItem(productId)
 }
 
 function checkCart() {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
+
 console.log(cart)
 let item = "";
 if (cart.length === 0) {
@@ -47,7 +47,6 @@ if (cart.length === 0) {
 checkCart()
 // // Törlés funkció a kosárból
 function removeItem(productId) {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
 cart = cart.filter((product) => product.id !== productId);
 sessionStorage.setItem("cart", JSON.stringify(cart));
 checkCart(); // Frissíti a kosarat, miután eltávolított egy elemet
@@ -58,7 +57,7 @@ isActive()
 
 function calculateTotal()
 {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
+
   let total = 0
   cart.map((item)=>{
     total += item.price;
@@ -72,7 +71,6 @@ function calculateTotal()
 calculateTotal()
 
 function clearCart() {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
   cart = []; 
   calculateTotal(); 
   checkCart(); 
@@ -80,7 +78,6 @@ function clearCart() {
 }
 
 function placeOrder() {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
   if (cart.length === 0) {
     alert("A kosár üres, nem tudsz rendelni.");
     return;
@@ -93,7 +90,6 @@ function placeOrder() {
 
 function isActive()
 {
-  let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
   let button = ""
   if(cart.length === 0)
   {
