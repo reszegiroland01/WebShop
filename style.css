@@ -235,4 +235,14 @@ a{
     color: white;
 }
 
+.relativeCart{
+    
+    position: relative;
+}
+
+.cartLength{
+    position: absolute;
+    right: 0;
+    top: 10%;
+}
 
