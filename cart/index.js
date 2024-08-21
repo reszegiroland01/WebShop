@@ -1,22 +1,7 @@
 
 let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
 
-function getItem(productId)
-{
-    
-  let product 
-  products.map((item)=>{
-      if(item.id === productId)
-      {
-          product = item
-      }
-  })
-  cart.push(product)
-  sessionStorage.setItem("cart", JSON.stringify(cart));
-  calculateTotal();
-  checkCart();
-  console.log(cart)
-}
+
 
 function checkCart() {
 
@@ -57,7 +42,7 @@ isActive()
 
 function calculateTotal()
 {
-
+ 
   let total = 0
   cart.map((item)=>{
     total += item.price;
@@ -65,8 +50,9 @@ function calculateTotal()
   });
   document.getElementById("totalAmount").innerHTML = `Összeg: ${total} Ft`;
   checkCart()
-  let totalItems = cart.length
+ 
   document.getElementById("itemsLength").innerHTML = totalItems
+  
 }
 calculateTotal()
 
