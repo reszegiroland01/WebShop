@@ -92,8 +92,7 @@ const products = [
   }
 ];
 
-
-
+let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
 
 function fo()
 {
@@ -113,6 +112,29 @@ function fo()
 
 }
 fo()
+
+function getCartLength()
+{
+  let cartLength = cart.length
+  document.getElementById("itemsLength").innerHTML=cartLength
+  console.log(cart)
+}
+getCartLength()
+
+function getItem(productId)
+{
+  let product 
+  products.map((item)=>{
+      if(item.id === productId)
+      {
+          product = item
+      }
+  })
+  cart.push(product)
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+ 
+  getCartLength()
+}
 
 function checkUser()
 {

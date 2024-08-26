@@ -32,7 +32,6 @@ function login()
             target.classList.remove("hideModal")
         }
     }
-
 }
 
 function registration()
