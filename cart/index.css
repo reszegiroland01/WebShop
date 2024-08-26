@@ -13,9 +13,11 @@ body{
 
 .cart{
     display: flex;
+    flex-wrap: wrap;
     background-color: white;
     width: 50%;
-    height: 600px;
+    min-height: 600px;
+    height: fit-content;
     border-radius: 7px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     padding-inline: 14px;
@@ -24,13 +26,12 @@ body{
 }
 
 .shopping{
-    
     display: flex;
     align-items: center;
 }
 .shoppingCart{
     
-    width: 60%;
+    width: 50%;
     
 }
 
@@ -158,3 +159,20 @@ input[type=date]{
 
 
 
+
+
+@media only screen and (max-width: 600px) {
+    .cart {
+      width: 100%;
+      padding: 0;
+    }
+    .cartDetails{
+        width: 100%;
+        padding-inline:0;
+
+    
+    }
+    .shoppingCart{
+        width: 100%;
+    }
+  }

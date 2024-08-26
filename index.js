@@ -133,21 +133,49 @@ function navigateToCart()
 
 function getItem(productId)
 {
-    
-  let product 
-  products.map((item)=>{
-      if(item.id === productId)
-      {
-          product = item
-      }
+  let alreadyInTheCart = false
+  cart.map((item)=>{
+    if(item.itemId ===productId){
+      alreadyInTheCart=true
+      item.quantity++
+      item.price = item.price*item.quantity
+    }
   })
-  cart.push(product)
+
+
+  if(alreadyInTheCart===false){
+    products.map((item)=>{
+        if(item.id === productId)
+        {
+          let cartItem={
+            cartItemId:cart.length,
+            itemId:item.id,
+            quantity:1,
+            price:item.price,
+            image:item.image,
+            title:item.name
+          }
+          cart.push(cartItem)
+         
+        }
+    })
+  }
+
+
   sessionStorage.setItem("cart", JSON.stringify(cart));
   getCartLength()
 }
 
 function getCartLength(){
-  document.getElementById("cartLength").innerHTML=cart.length
+  let totalLength = 0
+
+  cart.map((item)=>{
+    totalLength += item.quantity
+  })
+
+
+
+ document.getElementById("cartLength").innerHTML=totalLength
 }
 
 getCartLength()

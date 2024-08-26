@@ -15,10 +15,11 @@ if (cart.length === 0) {
     cart.map((product) => {
       item += `
           <div class="cartItem">
+          <div>${product.quantity} X</div>
               <div class="cartProductImageContainer">
                   <img class="cartProductImage" src="${product.image}" alt="${product.name}"></img>
               </div>
-                <p><strong> ${product.name} </strong></p>
+                <p><strong> ${product.title} </strong></p>
                 <p><strong> ${product.price} Ft</strong> </p>
                 <button class='cartRemove' onclick="removeItem(${product.id})">✖</button>
           </div>`;
