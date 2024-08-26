@@ -13,10 +13,11 @@ if (cart.length === 0) {
     cart.map((product) => {
       item += `
           <div class="cartItem">
+          <div>${product.quantity} X</div>
               <div class="cartProductImageContainer">
                   <img class="cartProductImage" src="${product.image}" alt="${product.name}"></img>
               </div>
-                <p><strong> ${product.name} </strong></p>
+                <p><strong> ${product.title} </strong></p>
                 <p><strong> ${product.price} Ft</strong> </p>
                 <button class='cartRemove' onclick="removeItem(${product.id})">✖</button>
           </div>`;
@@ -40,7 +41,7 @@ isActive()
 
 function calculateTotal()
 {
-
+ 
   let total = 0
   cart.map((item)=>{
     total += item.price;
@@ -48,8 +49,9 @@ function calculateTotal()
   });
   document.getElementById("totalAmount").innerHTML = `Összeg: ${total} Ft`;
   checkCart()
-  let totalItems = cart.length
+ 
   document.getElementById("itemsLength").innerHTML = totalItems
+  
 }
 calculateTotal()
 

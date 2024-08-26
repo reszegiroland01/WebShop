@@ -221,7 +221,7 @@ header{
     z-index: 10;
     justify-content: end;
     gap: 40px;
-    padding-inline: 50px;
+    width: 100%;
 }
 
 .navItem{

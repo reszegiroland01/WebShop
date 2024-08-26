@@ -94,6 +94,8 @@ const products = [
 
 let cart = JSON.parse(sessionStorage.getItem("cart"))??[]
 
+
+
 function fo()
 {
   let item = ''
@@ -152,7 +154,54 @@ function navigateToCart()
 }
 
 
+function getItem(productId)
+{
+  let alreadyInTheCart = false
+  cart.map((item)=>{
+    if(item.itemId ===productId){
+      alreadyInTheCart=true
+      item.quantity++
+      item.price = item.price*item.quantity
+    }
+  })
 
+
+  if(alreadyInTheCart===false){
+    products.map((item)=>{
+        if(item.id === productId)
+        {
+          let cartItem={
+            cartItemId:cart.length,
+            itemId:item.id,
+            quantity:1,
+            price:item.price,
+            image:item.image,
+            title:item.name
+          }
+          cart.push(cartItem)
+         
+        }
+    })
+  }
+
+
+  sessionStorage.setItem("cart", JSON.stringify(cart));
+  getCartLength()
+}
+
+function getCartLength(){
+  let totalLength = 0
+
+  cart.map((item)=>{
+    totalLength += item.quantity
+  })
+
+
+
+ document.getElementById("cartLength").innerHTML=totalLength
+}
+
+getCartLength()
 
 
 
